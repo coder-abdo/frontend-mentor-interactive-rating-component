@@ -1,0 +1,143 @@
+/* overpass font */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+@layer base,components,utilities;
+/* custom variables */
+:root {
+  /* mobile size  */
+  --MOB-SIZE: 376px;
+  /* colors */
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Light-Dark-Blue: hsl(217deg 14.57% 26.93%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+  /* font family and font base size */
+  --FONT: "Overpass", sans-serif;
+  --P-FONT-SIZE: 15px;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 10px;
+  }
+  body {
+    font-family: var(--FONT);
+    background-color: var(--Very-Dark-Blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  p {
+    font-size: var(--P-FONT-SIZE);
+    color: var(--Light-Grey);
+    &.thanks-text {
+      line-height: 1.5;
+    }
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--White);
+  }
+}
+.rating-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 4rem;
+  max-width: 42rem;
+  width: 100%;
+  background-color: var(--Dark-Blue);
+  border-radius: 2rem;
+  &.thanks {
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2.5rem;
+    max-width: 39rem;
+  }
+}
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.rating-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@layer components {
+  .star,
+  .rating {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--Light-Dark-Blue);
+    color: var(--Light-Grey);
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .star {
+    margin-bottom: 2rem;
+  }
+  .rating {
+    transition-property: color, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    &:hover {
+      background-color: var(--Orange);
+      color: var(--Dark-Blue);
+      cursor: pointer;
+    }
+    &.active {
+      background-color: var(--White);
+      color: var(--Dark-Blue);
+    }
+  }
+  .btn {
+    padding: 1rem 3rem;
+    background-color: var(--Orange);
+    border-radius: 20rem;
+    font-size: 1.6rem;
+    color: var(--Very-Dark-Blue);
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    &:hover {
+      background-color: var(--White);
+    }
+    &.disabled {
+      background-color: var(--Light-Grey);
+      cursor: not-allowed;
+    }
+  }
+  .thanks-img {
+    width: 15rem;
+    margin-bottom: 2rem;
+  }
+  .rating-state {
+    background-color: var(--Light-Dark-Blue);
+    color: var(--Orange);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+}
