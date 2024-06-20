@@ -27,7 +27,7 @@
     box-sizing: border-box;
   }
   html {
-    font-size: 10px;
+    font-size: 62.5%;
   }
   body {
     font-family: var(--FONT);
@@ -37,6 +37,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 0 2rem 1rem;
   }
   p {
     font-size: var(--P-FONT-SIZE);
@@ -139,5 +140,14 @@
     border-radius: 2rem;
     text-align: center;
     font-size: 1.8rem;
+  }
+}
+/* mobile design */
+@media screen and (max-width: 376px) {
+  html {
+    font-size: 50%;
+  }
+  body {
+    padding: 1.5rem 2rem;
   }
 }
